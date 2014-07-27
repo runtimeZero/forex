@@ -1,0 +1,56 @@
+<div id="container-box">
+  <div id="display-box">
+    <div id="first-row">
+      <div id="currency-display">
+<!--
+<select ng-model="activeCurrency" ng-options="currency for currency in currencies"></select>
+-->
+
+        <span class="dropdown" on-toggle="toggled(open)">
+          <a href class="dropdown-toggle">
+            <span class="currency-display">{{activeCurrency}}</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li ng-repeat="choice in currencies">
+            <a href="#" ng-click="updateActiveCurrency(choice)">{{choice}}</a>
+            </li>
+          </ul>
+        </span>
+
+
+
+      </div>
+
+    </div>
+
+    <div id="second-row">
+
+      <div id="bid-window">
+        <div class="txt-section">
+          <div class="priceLocation">
+            <fix-display val='{{current.bidPrice}}'></fix-display>
+          </div>
+        </div>
+        <div class="btn-section">
+          <button class="btn btn-sm btn-success center center-block" ng-click="alertModal('Buy',current.bidPrice)">Bid</button>
+        </div>
+      </div>
+
+      <div id="ask-window">
+
+        <div class="txt-section">
+          <div class="priceLocation">
+            <fix-display val='{{current.askPrice}}'></fix-display>
+          </div>
+        </div>
+        <div class="btn-section">
+          <button class="btn btn-sm btn-danger center-block" ng-click="alertModal('Sell',current.askPrice)">Ask</button>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
