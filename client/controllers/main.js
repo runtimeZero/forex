@@ -1,6 +1,5 @@
 angular.module('app')
-.controller('MainCtrl',['$scope','$interval','Price','AlertStore','$modal'
-    ,function($scope,$interval,Price,AlertStore,$modal){
+.controller('MainCtrl',['$scope','$interval','Price','AlertStore','$modal',function($scope,$interval,Price,AlertStore,$modal){
 
       $scope.current = {};
 
@@ -39,7 +38,7 @@ angular.module('app')
         });
 
 
-      }
+      };
 
       $scope.init = function(){
         $scope.activeCurrency = $scope.currencies[0];
