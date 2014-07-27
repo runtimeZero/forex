@@ -4,7 +4,8 @@
   "description": "Angular demo",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.7.1"
+    "express": "^4.7.1",
+    "protractor": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {
