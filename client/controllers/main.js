@@ -1,6 +1,6 @@
 angular.module('app')
-.controller('MainCtrl',['$scope','$interval','Price','AlertStore','$modal','$rootScope'
-    ,function($scope,$interval,Price,AlertStore,$modal,$rootScope){
+.controller('MainCtrl',['$scope','$interval','Price','AlertStore','$modal'
+    ,function($scope,$interval,Price,AlertStore,$modal){
 
       $scope.current = {};
 
@@ -10,7 +10,6 @@ angular.module('app')
         var tmp = Price.getUpdatedPrice($scope.activeCurrency);
         $scope.current.bidPrice = tmp.bid;
         $scope.current.askPrice = tmp.ask;
-        $rootScope.$broadcast('valuesUpdated');
       };
 
       $scope.updateActiveCurrency = function(choice){
