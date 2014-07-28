@@ -8,8 +8,16 @@ describe('Testing MainCtrl', function() {
   beforeEach(inject(function($rootScope, $controller) {
     $scope = $rootScope.$new();
 
+    mockPrice = {
+      getUpdatedPrice: function() {
+                    return {bid: 1.3456, ask: 1.3467};
+                       }
+    }
+
+
     ctrl = $controller('MainCtrl', {
-      $scope: $scope
+      $scope: $scope,
+      Price: mockPrice
     });
   }));
 
@@ -17,9 +25,10 @@ describe('Testing MainCtrl', function() {
     expect(ctrl).toBeDefined();
   });
 
-  xit('should initialize variables ', function() {
-    expect($scope.variable1).toBe("One");
-    expect($scope.variable2).toBe("Two");
+  it('should initialize bid and ask prices', function() {
+    expect($scope.activeCurrency).toBe('EUR/USD');
+    expect($scope.current.bidPrice).toBe(1.3456);
+    expect($scope.current.askPrice).toBe(1.3467);
   });
 
 
