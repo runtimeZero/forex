@@ -1,7 +1,7 @@
 Execution intructions:
 =========================
 1. Clone the project
-2. Goto the root directory of the cloned project in the root directory
+2. Goto the root directory of the cloned project 
 3. Execute the following commands
     /forex $>npm intall
     /forex $>node server.js
